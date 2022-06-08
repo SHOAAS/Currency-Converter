@@ -1,8 +1,8 @@
 
 #this program utilizes the following python libraries
-#pandas to read and interperet excel files
+#pandas to read and interpret excel files
 #requests to retrieve data from an url
-#os to configure costum pathing
+#os to configure custom pathing
 import pandas as pd
 import requests as rq
 import os
@@ -24,7 +24,7 @@ ccodes = pd.read_excel ((os.path.dirname(__file__)+"\CURRENCY_CODES.xlsx"),index
 #this function gives the exchange rate between to currencies using USD as the base
 def exchangerate(x,y):
     #adds the upper() so the input does not need to be uppercase
-    #this is used througout the program
+    #this is used throughout the program
     currencyfrom = (newrates["rates"][x.upper()])
     currencyto   = (newrates["rates"][y.upper()])           
     exchangerate.finalrate = (1/currencyfrom)*currencyto
@@ -41,18 +41,18 @@ def check():
         cur=input("What country's currency code do you want to know?")
         #pandas converted the data into an array so it can be simply looked up
         ccode= (ccodes.loc[cur.upper(),'Code'])
-        print("The curreny code of the currency usid in %s is %s"%(cur, ccode))
+        print("The curreny code of the currency used in %s is %s"%(cur, ccode))
     except KeyError:
         print("You input does not match any country in our database.")
 
 
-#the 'while True' loop is used troughout the program
+#the 'while True' loop is used throughout the program
 #to loop back if input is invalid
 #or to loop back to start the program over again   
 while True:
     #Currency Converter's introduction interface
     #presents the available functions
-    print("Welcome to this currency information programm!")
+    print("Welcome to this currency information program!")
     print("These are the currently supported functions:")
     print(" [1] Find Currency Code")
     print(" [2] Find Exchange Rate")
@@ -62,7 +62,7 @@ while True:
     while True:
         selection=int(input("Please enter the number of the function you want to use:"))
         if selection == 1:
-            print("you have selected: Find Currency Code")
+            print("You have selected: Find Currency Code")
             check()
             break
 
@@ -72,7 +72,7 @@ while True:
                 cur1=input("What is the currency you want to find the exchange rate for?") 
                 cur2=input("Against what currency?")
                 #since the function booth looks up values from an array
-                #and uses a mathimatical equation
+                #and uses a mathematical equation
                 #it is possible to get two different errors
                 #hence try except looks for both key and attribute errors
                 try:
@@ -141,7 +141,7 @@ while True:
                     change=change*-1
                     print("%s has depriciated %.4f percent to %s since %s"%(cur1.upper(),change,cur2.upper(),date))   
                 elif change >= 0:
-                    print("The %s has appreciated %.4f percent to %s since %s"%(cur1,change,cur2,date))    
+                    print("The %s has appreciated %.4f percent to %s since %s"%(cur1.upper(),change,cur2.upper(),date))    
                 elif change == 0:
                     print("The rate is more or less the same")    
 
