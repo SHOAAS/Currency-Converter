@@ -16,7 +16,7 @@ Currency Converter is downloadable trough the repository in GitHub. To download 
 https://github.com/SHOAAS/Currency-Converter
 2.	Download the zipped file containing all necessary files to run the program by clicking the green “Code” button.
 3.	Save the folder at your desired location and unzip it. Make sure to store all files in the same folder, otherwise the program will not be able to access the necessary data.)
-4.	Open the program in your preferred terminal.
+4.	run `currencyconverter.py` in your preferred terminal.
 5.	Make sure that your preferred terminal has the following Python libraries installed:
 o	Pandas
 o	Requests
